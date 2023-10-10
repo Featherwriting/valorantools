@@ -43,16 +43,15 @@
 
 
         <div class="row">
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">第一队先掷骰子</h5>
-                        <br>
-                        <p class="card-text"><br></p>
+                        <p class="card-text">点数大者为A队，优先进行以下选择</p>
                         <style>
                         #dice1{
-                            width: 100%;
-                            height: 200px;
+                            width: 60%;
+                            height: 120px;
                         }
                         </style>
                         <div id="dice1"></div>
@@ -81,20 +80,19 @@
                 }
                 
             </script>
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">第二队再掷骰子</h5>
-                        <br>
                         <p class="card-text">点数大者为A队，优先进行以下选择</p>
                         <style>
                         #dice2{
-                            width: 100%;
-                            height: 200px;
+                            width: 60%;
+                            height: 120px;
                         }
                         </style>
                         <div id="dice2"></div>
-                        <button id="roll", onclick="myDice2.roll()">roll</button>
+                        <button id="roll", onclick="myDice2.roll()">掷</button>
                         <script src="dice.js"></script>
                         <script>
                             var myDice2 = dice(document.getElementById('dice2'),{
@@ -109,8 +107,8 @@
 
 
         <div class="row">
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">A队Ban掉第一张图</h5>
                         <div class="dropdown">
@@ -133,8 +131,8 @@
                     <script>changeImage("A1");</script>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">B队Ban掉第一张图</h5>
                         <div class="dropdown">
@@ -161,8 +159,8 @@
 
 
         <div class="row">
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">A队选择第一张图</h5>
                         <div class="dropdown">
@@ -185,16 +183,16 @@
                     <script>changeImage("A2");</script>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">B队对第一张图选边</h5>
                         <div class="btn-group btn-group-toggle custom-btn-group" data-toggle="buttons">
                             <label class="btn btn-light custom-btn red">
-                              <input type="radio" name="options" id="option1" checked>进攻
+                              <input type="radio" name="options" id="M1option1" checked>进攻
                             </label>
                             <label class="btn btn-light custom-btn blue">
-                              <input type="radio" name="options" id="option2">防守
+                              <input type="radio" name="options" id="M1option2">防守
                             </label>
                           </div>
                     </div>
@@ -204,8 +202,8 @@
 
 
         <div class="row">
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">B队选择第二张图</h5>
                         <div class="dropdown">
@@ -228,16 +226,16 @@
                     <script>changeImage("B3");</script>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">A队对第二张图选边</h5>
                         <div class="btn-group btn-group-toggle custom-btn-group" data-toggle="buttons">
                             <label class="btn btn-light custom-btn red">
-                              <input type="radio" name="options" id="option1" checked>进攻
+                              <input type="radio" name="options" id="M2option1" checked>进攻
                             </label>
                             <label class="btn btn-light custom-btn blue">
-                              <input type="radio" name="options" id="option2">防守
+                              <input type="radio" name="options" id="M2option2">防守
                             </label>
                           </div>
                     </div>
@@ -247,8 +245,8 @@
 
 
         <div class="row">
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">A队Ban掉第二张图</h5>
                         <div class="dropdown">
@@ -271,8 +269,8 @@
                     <script>changeImage("A4");</script>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">B队Ban掉第二张图</h5>
                         <div class="dropdown">
@@ -299,8 +297,8 @@
 
 
         <div class="row">
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">去掉已Ban/选的六张地图与非服役地图，剩下的一张图为：</h5>
                         <div class="dropdown">
@@ -323,27 +321,135 @@
                     <script>changeImage("A5");</script>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
+            <div class="col d-flex">
+                <div class="card flex-fill">
                     <div class="card-body">
                         <h5 class="card-title">A队对第三张图选边</h5>
                         <div class="btn-group btn-group-toggle custom-btn-group" data-toggle="buttons">
                             <label class="btn btn-light custom-btn red">
-                              <input type="radio" name="options" id="option1" checked>进攻
+                              <input type="radio" name="options" id="M3option1" checked>进攻
                             </label>
                             <label class="btn btn-light custom-btn blue">
-                              <input type="radio" name="options" id="option2">防守
+                              <input type="radio" name="options" id="M3option2">防守
                             </label>
                           </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <div class="row">
+            <div class="col d-flex">
+                <div class="card-body">
+                    <h5 class="card-title">图一</h5>
+                    <h6 class="card-subtitle" id="M11"></h6>
+                    <h6 class="card-subtitle" id="M12"></h6>
+                </div>
+                <img src="src/idle.png" id="imgM1">
+            </div>
+            <div class="col d-flex">
+                <div class="card-body">
+                    <h5 class="card-title">图一</h5>
+                    <h6 class="card-subtitle" id="M21"></h6>
+                    <h6 class="card-subtitle" id="M22"></h6>
+                </div>
+                <img src="src/idle.png" id="imgM2">
+            </div>
+            <div class="col d-flex">
+                <div class="card-body">
+                    <h5 class="card-title">图一</h5>
+                    <h6 class="card-subtitle" id="M31"></h6>
+                    <h6 class="card-subtitle" id="M32"></h6>
+                </div>
+                <img src="src/idle.png" id="imgM3">
+            </div>
+        </div>
+        
     </div>
     
 
 
+    <script>
+        var map1 = document.getElementById("imgA2"),
+            map2 = document.getElementById("imgB3"),
+            map3 = document.getElementById("imgA5");
 
+        function textMap (map) {
+            var option1 = document.getElementById(map+"option1");
+            if (option1.checked) return false;
+            else return true;
+        }
+        map1.addEventListener("load", function() {
+            document.getElementById("imgM1").src = map1.src;
+            if(textMap("M1")) {
+                document.getElementById("M11").textContent= "A队进攻";
+                document.getElementById("M12").textContent= "B队防守";
+            }
+            else {
+                document.getElementById("M11").textContent= "A队防守";
+                document.getElementById("M12").textContent= "B队进攻";
+            } 
+        });
+        map2.addEventListener("load", function() {
+            document.getElementById("imgM2").src = map2.src;
+            if(textMap("M2")) {
+                document.getElementById("M21").textContent= "A队防守";
+                document.getElementById("M22").textContent= "B队进攻";
+            }
+            else {
+                document.getElementById("M21").textContent= "A队进攻";
+                document.getElementById("M22").textContent= "B队防守";
+            } 
+        });
+        map3.addEventListener("load", function() {
+            document.getElementById("imgM3").src = map3.src;
+            if(textMap("M3")) {
+                document.getElementById("M31").textContent= "A队进攻";
+                document.getElementById("M32").textContent= "B队防守";
+            }
+            else {
+                document.getElementById("M31").textContent= "A队防守";
+                document.getElementById("M32").textContent= "B队进攻";
+            } 
+        });
+        
+        var op1 = document.getElementById("M1option1"),
+            op2 = document.getElementById("M2option1"),
+            op3 = document.getElementById("M3option1");
+
+        op1.addEventListener("change", function() {
+            if(textMap("M1")) {
+                document.getElementById("M11").textContent= "A队进攻";
+                document.getElementById("M12").textContent= "B队防守";
+            }
+            else {
+                document.getElementById("M11").textContent= "A队防守";
+                document.getElementById("M12").textContent= "B队进攻";
+            } 
+        })
+        op2.addEventListener("change", function() {
+            if(textMap("M2")) {
+                document.getElementById("M21").textContent= "A队防守";
+                document.getElementById("M22").textContent= "B队进攻";
+            }
+            else {
+                document.getElementById("M21").textContent= "A队进攻";
+                document.getElementById("M22").textContent= "B队防守";
+            }
+        })
+        op3.addEventListener("change", function() {
+            if(textMap("M3")) {
+                document.getElementById("M31").textContent= "A队进攻";
+                document.getElementById("M32").textContent= "B队防守";
+            }
+            else {
+                document.getElementById("M31").textContent= "A队防守";
+                document.getElementById("M32").textContent= "B队进攻";
+            } 
+        })
+
+    </script>
 
 
 

@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 的 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>地图选择</title>
+  </head>
+  <body>
+    <div class="container">
+        <style>
+            .row {
+              margin-top: 6%;
+              margin-bottom: 6%;
+        }
+            .custom-btn-group {
+            display: flex;
+            padding-top: 10%;
+            flex-direction: column;
+            align-items: stretch;
+        }
+            .custom-btn {
+            padding-top: 11%;
+            padding-bottom: 11%;
+            border-width: 3px;
+            flex: 1;
+            font-size: 24px;
+        }
+            .btn.btn-light.custom-btn.red.active {
+            color: #ff5733; /* 修改文本颜色 */
+            border-color: #ff5733; /* 修改边框颜色 */
+            
+        }
+            .btn.btn-light.custom-btn.blue.active {
+            color: #0567fb; /* 修改文本颜色 */
+            border-color: #0567fb; /* 修改边框颜色 */
+        }
+        </style>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">第一队先掷骰子</h5>
+                        <br>
+                        <p class="card-text"><br></p>
+                        <style>
+                        #dice1{
+                            width: 100%;
+                            height: 200px;
+                        }
+                        </style>
+                        <div id="dice1"></div>
+                        <button id="roll1", onclick="myDice1.roll()">掷</button>
+                        <script src="dice.js"></script>
+                        <script>
+                            var myDice1 = dice(document.getElementById('dice1'),{
+                                keepAnimationTime:1000
+                                ,endAnimationTime:200
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function changeImage(name) {
+                    var imageSelector = document.getElementById(name);
+                    var targetImage = document.getElementById("img" + name);
+                    imageSelector.addEventListener("change", function() {
+                    // 获取所选的图片值
+                    var selectedImage = imageSelector.value;
+                    
+                    // 更新目标图片的 src 属性以显示所选图片
+                    targetImage.src = selectedImage;
+                    });
+                }
+                
+            </script>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">第二队再掷骰子</h5>
+                        <br>
+                        <p class="card-text">点数大者为A队，优先进行以下选择</p>
+                        <style>
+                        #dice2{
+                            width: 100%;
+                            height: 200px;
+                        }
+                        </style>
+                        <div id="dice2"></div>
+                        <button id="roll", onclick="myDice2.roll()">roll</button>
+                        <script src="dice.js"></script>
+                        <script>
+                            var myDice2 = dice(document.getElementById('dice2'),{
+                                keepAnimationTime:1000
+                                ,endAnimationTime:200
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">A队Ban掉第一张图</h5>
+                        <div class="dropdown">
+                        <select class="btn btn-secondary dropdown-toggle" id="A1" aria-expanded="false">
+                            <option selected>请选择</option>
+                            <option value="src/BI.webp">源工重镇</option>
+                            <option value="src/HA.webp">隐世修所</option>
+                            <option value="src/SP.webp">霓虹町</option>
+                            <option value="src/AS.webp">亚海悬城</option>
+                            <option value="src/IC.webp">森寒冬港</option>
+                            <option value="src/BR.webp">微风岛屿</option>
+                            <option value="src/FR.webp">裂变峡谷</option>
+                            <option value="src/PE.webp">深海明珠</option>
+                            <option value="src/LO.webp">莲华古城</option>
+                            <option value="src/SU.webp">日落之城</option>
+                        </select>
+                        </div>
+                    </div>
+                    <img src="src/idle.png" id="imgA1" class="card-img-bottom">  
+                    <script>changeImage("A1");</script>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">B队Ban掉第一张图</h5>
+                        <div class="dropdown">
+                        <select class="btn btn-secondary dropdown-toggle" id="B1" aria-expanded="false">
+                            <option selected>请选择</option>
+                            <option value="src/BI.webp">源工重镇</option>
+                            <option value="src/HA.webp">隐世修所</option>
+                            <option value="src/SP.webp">霓虹町</option>
+                            <option value="src/AS.webp">亚海悬城</option>
+                            <option value="src/IC.webp">森寒冬港</option>
+                            <option value="src/BR.webp">微风岛屿</option>
+                            <option value="src/FR.webp">裂变峡谷</option>
+                            <option value="src/PE.webp">深海明珠</option>
+                            <option value="src/LO.webp">莲华古城</option>
+                            <option value="src/SU.webp">日落之城</option>
+                        </select>
+                        </div>
+                    </div>
+                    <img src="src/idle.png" id="imgB1" class="card-img-bottom">  
+                    <script>changeImage("B1");</script>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">A队选择第一张图</h5>
+                        <div class="dropdown">
+                        <select class="btn btn-secondary dropdown-toggle" id="A2" aria-expanded="false">
+                            <option selected>请选择</option>
+                            <option value="src/BI.webp">源工重镇</option>
+                            <option value="src/HA.webp">隐世修所</option>
+                            <option value="src/SP.webp">霓虹町</option>
+                            <option value="src/AS.webp">亚海悬城</option>
+                            <option value="src/IC.webp">森寒冬港</option>
+                            <option value="src/BR.webp">微风岛屿</option>
+                            <option value="src/FR.webp">裂变峡谷</option>
+                            <option value="src/PE.webp">深海明珠</option>
+                            <option value="src/LO.webp">莲华古城</option>
+                            <option value="src/SU.webp">日落之城</option>
+                        </select>
+                        </div>
+                    </div>
+                    <img src="src/idle.png" id="imgA2" class="card-img-bottom">  
+                    <script>changeImage("A2");</script>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">B队对第一张图选边</h5>
+                        <div class="btn-group btn-group-toggle custom-btn-group" data-toggle="buttons">
+                            <label class="btn btn-light custom-btn red">
+                              <input type="radio" name="options" id="option1" checked>进攻
+                            </label>
+                            <label class="btn btn-light custom-btn blue">
+                              <input type="radio" name="options" id="option2">防守
+                            </label>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">B队选择第二张图</h5>
+                        <div class="dropdown">
+                        <select class="btn btn-secondary dropdown-toggle" id="B3" aria-expanded="false">
+                            <option selected>请选择</option>
+                            <option value="src/BI.webp">源工重镇</option>
+                            <option value="src/HA.webp">隐世修所</option>
+                            <option value="src/SP.webp">霓虹町</option>
+                            <option value="src/AS.webp">亚海悬城</option>
+                            <option value="src/IC.webp">森寒冬港</option>
+                            <option value="src/BR.webp">微风岛屿</option>
+                            <option value="src/FR.webp">裂变峡谷</option>
+                            <option value="src/PE.webp">深海明珠</option>
+                            <option value="src/LO.webp">莲华古城</option>
+                            <option value="src/SU.webp">日落之城</option>
+                        </select>
+                        </div>
+                    </div>
+                    <img src="src/idle.png" id="imgB3" class="card-img-bottom">  
+                    <script>changeImage("B3");</script>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">A队对第二张图选边</h5>
+                        <div class="btn-group btn-group-toggle custom-btn-group" data-toggle="buttons">
+                            <label class="btn btn-light custom-btn red">
+                              <input type="radio" name="options" id="option1" checked>进攻
+                            </label>
+                            <label class="btn btn-light custom-btn blue">
+                              <input type="radio" name="options" id="option2">防守
+                            </label>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">A队Ban掉第二张图</h5>
+                        <div class="dropdown">
+                        <select class="btn btn-secondary dropdown-toggle" id="A4" aria-expanded="false">
+                            <option selected>请选择</option>
+                            <option value="src/BI.webp">源工重镇</option>
+                            <option value="src/HA.webp">隐世修所</option>
+                            <option value="src/SP.webp">霓虹町</option>
+                            <option value="src/AS.webp">亚海悬城</option>
+                            <option value="src/IC.webp">森寒冬港</option>
+                            <option value="src/BR.webp">微风岛屿</option>
+                            <option value="src/FR.webp">裂变峡谷</option>
+                            <option value="src/PE.webp">深海明珠</option>
+                            <option value="src/LO.webp">莲华古城</option>
+                            <option value="src/SU.webp">日落之城</option>
+                        </select>
+                        </div>
+                    </div>
+                    <img src="src/idle.png" id="imgA4" class="card-img-bottom">  
+                    <script>changeImage("A4");</script>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">B队Ban掉第二张图</h5>
+                        <div class="dropdown">
+                        <select class="btn btn-secondary dropdown-toggle" id="B4" aria-expanded="false">
+                            <option selected>请选择</option>
+                            <option value="src/BI.webp">源工重镇</option>
+                            <option value="src/HA.webp">隐世修所</option>
+                            <option value="src/SP.webp">霓虹町</option>
+                            <option value="src/AS.webp">亚海悬城</option>
+                            <option value="src/IC.webp">森寒冬港</option>
+                            <option value="src/BR.webp">微风岛屿</option>
+                            <option value="src/FR.webp">裂变峡谷</option>
+                            <option value="src/PE.webp">深海明珠</option>
+                            <option value="src/LO.webp">莲华古城</option>
+                            <option value="src/SU.webp">日落之城</option>
+                        </select>
+                        </div>
+                    </div>
+                    <img src="src/idle.png" id="imgB4" class="card-img-bottom">  
+                    <script>changeImage("B4");</script>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">去掉已Ban/选的六张地图与非服役地图，剩下的一张图为：</h5>
+                        <div class="dropdown">
+                        <select class="btn btn-secondary dropdown-toggle" id="A5" aria-expanded="false">
+                            <option selected>请选择</option>
+                            <option value="src/BI.webp">源工重镇</option>
+                            <option value="src/HA.webp">隐世修所</option>
+                            <option value="src/SP.webp">霓虹町</option>
+                            <option value="src/AS.webp">亚海悬城</option>
+                            <option value="src/IC.webp">森寒冬港</option>
+                            <option value="src/BR.webp">微风岛屿</option>
+                            <option value="src/FR.webp">裂变峡谷</option>
+                            <option value="src/PE.webp">深海明珠</option>
+                            <option value="src/LO.webp">莲华古城</option>
+                            <option value="src/SU.webp">日落之城</option>
+                        </select>
+                        </div>
+                    </div>
+                    <img src="src/idle.png" id="imgA5" class="card-img-bottom">  
+                    <script>changeImage("A5");</script>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">A队对第三张图选边</h5>
+                        <div class="btn-group btn-group-toggle custom-btn-group" data-toggle="buttons">
+                            <label class="btn btn-light custom-btn red">
+                              <input type="radio" name="options" id="option1" checked>进攻
+                            </label>
+                            <label class="btn btn-light custom-btn blue">
+                              <input type="radio" name="options" id="option2">防守
+                            </label>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
